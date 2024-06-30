@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BFS System Integration Landscape - JP Morgan</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+</head>
+<body>
+    <div class="d-flex flex-column align-items-center vh-100">
+        <h1 class="mt-4 mb-3">BFS System Integration Landscape</h1>
+        <div class="form-group">
+            <label for="layout-select">Choose a layout:</label>
+            <select id="layout-select" class="form-control mb-3" onchange="changeLayout()">
+                <option value="grid">Grid</option>
+                <option value="circle">Circle</option>
+                <option value="concentric">Concentric</option>
+                <option value="breadthfirst">Breadthfirst</option>
+                <option value="cose">Cose</option>
+                <option value="random">Random</option>
+                <option value="preset">Preset</option>
+            </select>
+            <button class="btn btn-primary mb-2" onclick="exportAsImage()">Export as Image</button>
+            <button class="btn btn-secondary mb-2" onclick="resetLayout()">Reset Layout</button>
+            <button class="btn btn-success mb-2" onclick="saveLayout()">Save Layout</button>
+            <input type="file" id="layout-file" class="d-none" onchange="restoreLayout(event)" />
+            <button class="btn btn-info mb-2" onclick="document.getElementById('layout-file').click()">Restore Layout</button>
+    
+       
+        </div>
+        <div id="cy" class="flex-grow-1 w-100 border mt-3"></div>
+    </div>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
